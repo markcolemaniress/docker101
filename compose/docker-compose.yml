@@ -12,8 +12,6 @@ services:
     container_name: dockerdemoapp
     image: dockerdemoapp
     restart: always
-    ports:
-    - '8301:80'
     links:
     - db
   db:
