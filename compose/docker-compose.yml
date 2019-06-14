@@ -1,7 +1,6 @@
 version: '3'
 services:
   web: 
-    container_name: dockerdemoweb
     image: dockerdemoweb
     restart: always
     ports:
@@ -9,7 +8,6 @@ services:
     links:
     - app
   app: 
-    container_name: dockerdemoapp
     image: dockerdemoapp
     restart: always
     links:
