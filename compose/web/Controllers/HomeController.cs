@@ -12,6 +12,7 @@ namespace web.Controllers
     {
         public async Task<IActionResult> Index()
         {
+            System.Console.WriteLine("Index controller called");
             IEnumerable<Player> players = await ApiManager.GetPlayers();
             return View(players);
         }
