@@ -31,7 +31,7 @@ public class DataManager
         IList<Player> result = new List<Player>();
 
         SqlConnection conn = GetConnection();
-        SqlCommand comm = new SqlCommand($"SELECT * FROM Player", conn);
+        SqlCommand comm = new SqlCommand($"SELECT PlayerId, Name, Position FROM Player", conn);
 
         SqlDataReader rdr = comm.ExecuteReader();
         while (rdr.Read())
@@ -50,10 +50,7 @@ public class DataManager
 
     private static SqlConnection GetConnection()
     {
-        //const string CONNECTION_STRING = "Server=.;Database=DockerDemo;Trusted_Connection=True;";
         const string CONNECTION_STRING = "Server=db;Database=DockerDemo;User Id=sa;Password=Passw0rd";
-
-        Console.WriteLine($"CONNECTION_STRING is {CONNECTION_STRING}");
 
         SqlConnection connection = new SqlConnection(CONNECTION_STRING);
         connection.Open();

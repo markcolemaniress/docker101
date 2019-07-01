@@ -15,6 +15,7 @@ namespace app.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Player>> Get()
         {
+            Console.WriteLine("Api.PlayersController.Get() called");
             return DataManager.GetPlayers().ToArray();
         }
 
@@ -22,6 +23,7 @@ namespace app.Controllers
         [HttpGet("{id}")]
         public ActionResult<Player> Get(int id)
         {
+            Console.WriteLine("Api.PlayersController.Get(id) called");
             return DataManager.GetPlayerDetails(id);
         }
     }
